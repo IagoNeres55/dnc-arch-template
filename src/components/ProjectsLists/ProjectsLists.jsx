@@ -14,23 +14,24 @@ import { AppContext } from '../../contexts/AppContext'
 
 // SERVICES
 import { getApiData } from '../../services/apiServices'
+import { projects } from '../../mocks/projects'
 
 const ProjectsLists = () => {
     const appContext = useContext(AppContext)
-    const [projects, setProject] = useState()
+    // const [projects, setProject] = useState(projects)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const projects = await getApiData("projects")
-                setProject(projects)
-            } catch (err) {
-                setProject([])
-            }
-        }
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const projects = await getApiData("projects")
+    //             setProject(projects)
+    //         } catch (err) {
+    //             setProject([])
+    //         }
+    //     }
 
-        fetchData()
-    }, [])
+    //     fetchData()
+    // }, [])
 
     // FAV PROJECTS
     const [favProjects, setFavProject] = useState([])
